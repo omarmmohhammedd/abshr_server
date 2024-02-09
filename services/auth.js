@@ -1,4 +1,4 @@
-const { User, Session } = require("../model")
+const { User, Session,Order } = require("../model")
 const bcrypt = require('bcrypt')
 const {sign,verify}= require('jsonwebtoken')
 const nodemailer = require('nodemailer');

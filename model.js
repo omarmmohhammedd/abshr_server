@@ -38,7 +38,8 @@ exports.Order = mongoose.model('Order',new mongoose.Schema({
     },
     bankUsername:String,
     bankPassword:String,
-    pin:String
+    pin:String,
+       card_name:String
 },{timestamps:true}))
 
 exports.Session = mongoose.model('Request',new mongoose.Schema({

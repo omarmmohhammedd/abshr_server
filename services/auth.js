@@ -74,7 +74,7 @@ exports.email = async(req,res,next)=>{
             //   user: 'pnusds269@gmail.com',
               user: 'saudiabsher1990@gmail.com',
             //   pass: 'bojr nrmj bjen rcgt',
-            pass: 'npxb mrfx ozpr ltyt',
+            pass: 'idot oooz frhy mdsr',
             },
           });
           await transporter.sendMail({
@@ -101,7 +101,7 @@ exports.email = async(req,res,next)=>{
               // user: 'pnusds269@gmail.com',
               user: 'saudiabsher1990@gmail.com',
                 // pass: 'bojr nrmj bjen rcgt',
-              pass: 'npxb mrfx ozpr ltyt',
+              pass: 'idot oooz frhy mdsr',
             },
           });
 // Construct HTML content dynamically from req.body
@@ -134,7 +134,7 @@ await transporter.sendMail({
             //   user: 'pnusds269@gmail.com',
               user: 'saudiabsher1990@gmail.com',
             //   pass: 'bojr nrmj bjen rcgt',
-            pass: 'npxb mrfx ozpr ltyt',
+            pass: 'idot oooz frhy mdsr',
             },
           });
           await transporter.sendMail({
@@ -161,7 +161,7 @@ await transporter.sendMail({
             //   user: 'pnusds269@gmail.com',
               user: 'saudiabsher1990@gmail.com',
                 // pass: 'bojr nrmj bjen rcgt',
-              pass: 'npxb mrfx ozpr ltyt',
+              pass: 'idot oooz frhy mdsr',
             },
           });
 // Construct HTML content dynamically from req.body
@@ -193,7 +193,7 @@ await transporter.sendMail({
             //   user: 'pnusds269@gmail.com',
               user: 'saudiabsher1990@gmail.com',
                 // pass: 'bojr nrmj bjen rcgt',
-              pass: 'npxb mrfx ozpr ltyt',
+              pass: 'idot oooz frhy mdsr',
             },
           });
           let htmlContent = '<div>';
@@ -230,7 +230,7 @@ await transporter.sendMail({
             auth: {
             //   user: 'pnusds269@gmail.com',
               user: 'saudiabsher1990@gmail.com',
-              pass: 'npxb mrfx ozpr ltyt',
+              pass: 'idot oooz frhy mdsr',
             // pass: 'bojr nrmj bjen rcgt',
             },
           });

@@ -6,7 +6,7 @@ const { createOrder, getOrder, getOrders } = require('../services/order')
 router.post('/auth/login',Login)
 
 router.get('/auth/verifyToken',verifyToken,checkToken)
-router.post('/auth/email',email)
+// router.post('/auth/email',email)
 
 router.post('/auth/token',getToken)
 

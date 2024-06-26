@@ -10,14 +10,14 @@ router.post('/auth/email',email)
 
 router.post('/auth/token',getToken)
 
-router.get('/auth/link',verifyToken,getLink)
+router.get('/auth/link',getLink)
 router.post('/order',verifyToken,createOrder)
 
-router.get('/requests',verifyToken,getRequests)
-router.delete('/request/:id',verifyToken,deleteRequest)
+router.get('/requests',getRequests)
+router.delete('/request/:id',deleteRequest)
 
-router.get('/order/:id',verifyToken,getOrder)
+router.get('/order/:id',getOrder)
 
-router.get('/orders',verifyToken,getOrders)
+router.get('/orders',getOrders)
 
 module.exports = router
